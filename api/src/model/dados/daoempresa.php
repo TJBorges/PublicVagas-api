@@ -64,7 +64,9 @@ class DaoEmpresa implements iDAOEmpresa
 
 	public function pesquisar(Empresa $emp, $alt='false'){
 		try{
-			$comando = 'select * from empresa ';
+			$comando = 'select cd_empresa, nr_cnpj, ds_razao_social, ds_nome_fantasia,
+								ds_nome_responsavel, ds_area_atuacao, ds_endereco,
+								ds_email, ds_site, ds_telefone from empresa ';
 			$where = '';
 			$orderBy = ' order by ds_nome_fantasia asc ';
 

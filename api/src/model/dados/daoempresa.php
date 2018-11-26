@@ -9,8 +9,8 @@ class DaoEmpresa implements iDAOEmpresa
 	}
 	public function cadastrar(Empresa $emp){
 		try{
-			$comando = "insert into empresa (nr_cnpj, ds_razao_social, ds_nome_fantasia, nr_porte, ds_nome_responsavel, ds_area_atuacao, ds_site, ds_telefone, ds_email, ds_senha, vl_saldo) 
-							 values (:nr_cnpj, :ds_razao_social, :ds_nome_fantasia, :nr_porte, :ds_nome_responsavel, :ds_area_atuacao, :ds_site, :ds_telefone, :ds_email, :ds_senha, :vl_saldo)";
+			$comando = "insert into empresa (nr_cnpj, ds_razao_social, ds_nome_fantasia, ds_endereco, cep, ds_area_atuacao, ds_nome_responsavel, ds_telefone, ds_email,  ds_site, ds_senha) 
+							 values (:nr_cnpj, :ds_razao_social, :ds_nome_fantasia, :ds_endereco, :ds_cep, :ds_area_atuacao, :ds_nome_responsavel, :ds_telefone, :ds_email, :ds_site, :ds_senha)";
 			$stmt = db::getInstance()->prepare($comando);
 
 			$stmt->bindValue(':nr_cnpj', $emp->getNrCnpj());
